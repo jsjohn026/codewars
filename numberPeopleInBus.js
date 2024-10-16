@@ -14,15 +14,21 @@ The second value in the first pair in the array is 0, since the bus is empty in 
 */
 
 var number = function(busStops){
-  // Good Luck!
+  let passengers = 0;
+  for (stop of busStops) {
+    passengers += stop[0]
+    passengers -= stop[1]
+  }
+
+  return passengers;
+
 }
 
 // refactor:
 
-var number = function(busStops){
-  // Good Luck!
-}
+const number = (busStops) => busStops.reduce((passengers, [on, off]) => passengers + on - off, 0)
 
+console.log(number([[10,0],[3,5],[5,8]]));
 
 // Tests:
 /* 
