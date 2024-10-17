@@ -28,7 +28,7 @@ var number = function(busStops){
 
 const number = (busStops) => busStops.reduce((passengers, [on, off]) => passengers + on - off, 0)
 
-console.log(number([[10,0],[3,5],[5,8]]));
+console.log(number([[10,0],[3,5],[5,8]])); // 5
 
 // Tests:
 /* 
