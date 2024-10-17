@@ -19,9 +19,7 @@ var number = function(busStops){
     passengers += stop[0]
     passengers -= stop[1]
   }
-
   return passengers;
-
 }
 
 // refactor:
