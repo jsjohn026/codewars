@@ -17,8 +17,8 @@ function findNextSquare(sq) {
   return Number.isInteger(root) ? ((root + 1)**2) : -1 
 }
 
-console.log(findNextSquare(121));
-console.log(findNextSquare(155));
+// console.log(findNextSquare(121));
+// console.log(findNextSquare(155));
 
 // refactor:
 
