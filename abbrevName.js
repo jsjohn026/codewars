@@ -12,10 +12,9 @@ patrick feeney => P.F
 */
 
 function abbrevName(name){
-
   const names = name.split(' ');
   let initials = names.map(name => name[0].toUpperCase())
   return initials[0] + '.' + initials[1]
-
 }
 
+// refactor:
