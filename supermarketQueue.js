@@ -33,13 +33,47 @@ P.S. The situation in this kata can be likened to the more-computer-science-rela
 */
 
 function queueTime(customers, n) {
-  //TODO
+  let queues = {}
+  for(let i = 1; i <= n; i++) {
+    queues[i] = 0;
+  }
+  for(let i = 0; i < customers.length; i++) {
+    let sortedTimes = Object.values(queues).sort((a, b) => a - b)
+    let shortestTime = sortedTimes[0]
+    let shortestQueue = Object.keys(queues).find(key => queues[key] === shortestTime) 
+    queues[shortestQueue] += customers[i]
+  }
+  let totalTimes = Object.values(queues).sort((a, b) => a - b)
+  console.log(totalTimes)
+  return totalTimes[totalTimes.length - 1]
 }
+// populate queues with n tills all starting at 0 seconds
+// iterate through customers, adding each customer time to the till with the shortest total. 
+// each customer goes to the queue with the shortest total time
+// return the total time of the till with the highest time.
 
 // refactor:
 
 function queueTime(customers, n) {
-  //TODO
+  var w = new Array(n).fill(0);
+  for (let t of customers) {
+    let idx = w.indexOf(Math.min(...w));
+    w[idx] += t;
+  }
+  return Math.max(...w);
+}
+
+// OR
+
+function queueTime(customers, n) {
+  let tills = Array(n).fill(0);
+  
+  customers.forEach((customer) => {
+    let nextTill = tills.indexOf(Math.min(...tills))
+    tills[nextTill] += customer;
+  });
+
+  return Math.max(...tills);
 }
 
 
