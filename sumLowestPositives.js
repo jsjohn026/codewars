@@ -8,13 +8,15 @@ For example, when an array is passed like [19, 5, 42, 2, 77], the output should 
 */
 
 function sumTwoSmallestNumbers(numbers) {  
-  //Code here
+  let sorted = numbers.sort((a, b) => a - b)
+  return sorted[0] + sorted[1]
 }
 
 // refactor:
 
 function sumTwoSmallestNumbers(numbers) {  
-  //Code here
+  var [ a, b ] = numbers.sort((a, b) => a -b)
+  return a + b
 }
 
 
