@@ -26,7 +26,19 @@ function solution(str){
 // refactor:
 
 function solution(str){
-   
+  let pairs = []
+  if (str.length % 2 !== 0) {
+    pairs.push(str[str.length - 1] + '_')
+  }
+
+  for(let i = 0; i < str.length; i += 2 ){
+   if(i % 2 === 0) {
+     pairs.push(str[i] + str[i + 1])
+   }
+
+ }
+ 
+ return pairs; 
 }
 
 

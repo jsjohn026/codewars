@@ -26,7 +26,6 @@ Examples:
 */
 
 function bouncingBall(h,  bounce,  window) {
-  // let totalBounces = 1;
   if((h > 0) && (1 > bounce) && (bounce > 0) && (window < h)){
     return numberOfVisibleBounces(h, bounce, window)
   } else {
@@ -46,7 +45,7 @@ function numberOfVisibleBounces(h, bounce, window) {
 }
 
 // refactor:
-
+// h = -1.0 bounce = 0.66 window = -1.5
 function bouncingBall(h,  bounce,  window) {
   var rebounds = -1;
   if (bounce > 0 && bounce < 1) while (h > window) rebounds+=2, h *= bounce;
