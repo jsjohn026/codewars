@@ -25,8 +25,6 @@ function sortArray(array) {
    return array.map((x) => x % 2 ? odd.shift() : x)
  }
 
-
-
 // Tests:
 /* 
 const chai = require("chai");
