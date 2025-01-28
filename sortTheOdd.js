@@ -10,12 +10,19 @@ Examples
 */
 
 function sortArray(array) {
-   // Return a sorted array.
+   let odds = array.filter((num) => num % 2 !== 0).sort(( a, b ) => a - b)
+   let sortedOdds = []
+
+   for (let i = 0; i < array.length; i++) {
+      array[i] % 2 === 0 ? sortedOdds.push(array[i]) : sortedOdds.push(odds.shift())
+   }
+   return sortedOdds
  }
 
 // refactor:
 function sortArray(array) {
-   // Return a sorted array.
+   const odd = array.filter((x) => x % 2).sort((a,b) => a - b)
+   return array.map((x) => x % 2 ? odd.shift() : x)
  }
 
 
