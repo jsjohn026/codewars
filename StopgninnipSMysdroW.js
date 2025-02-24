@@ -10,13 +10,22 @@ Examples:
 */
 
 function spinWords(string){
-   //TODO Have fun :)
+    let words = string.split(" ")
+    for (let i = 0; i < words.length; i++) {
+      const word = words[i];
+      if (word.length >= 5) {
+        words[i] = word.split("").reverse().join("")
+      }
+    }
+    return words.join(" ")
  }
 
 // refactor:
-
-
-
+function spinWords(words){
+  return words.split(' ').map((word) => {
+    return (word.length > 4) ? word.split('').reverse().join('') : word;
+  }).join(' ');
+}
 
 // Tests:
 /* 
