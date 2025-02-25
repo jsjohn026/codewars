@@ -17,7 +17,7 @@ function order(words){
   let finalWords = []
   for (let i = 0; i < allWords.length; i++) {
     const num = Number(allWords[i].split('').find((e) => Number(e)));
-    finalWords[num -1] = allWords[i]
+    finalWords[num - 1] = allWords[i]
   }
   return finalWords.join(' ')
 }
