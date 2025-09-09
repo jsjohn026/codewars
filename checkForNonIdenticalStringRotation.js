@@ -31,7 +31,6 @@ function isNonTrivialRotation(s1, s2) {
 }
 
 
-
 // Tests:
 /* 
 
