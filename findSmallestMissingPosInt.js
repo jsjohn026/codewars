@@ -14,8 +14,8 @@ function findSmallestMissingPositive(orderNumbers) {
             orderNumbers[i] <= max && 
             orderNumbers[i]!== orderNumbers[orderNumbers[i] - 1]) {
                 
-            let correctIndex = orderNumbers[i] - 1;
-            [orderNumbers[i], orderNumbers[correctIndex]] = [orderNumbers[correctIndex], orderNumbers[i]]
+            let targetIndex = orderNumbers[i] - 1;
+            [orderNumbers[i], orderNumbers[targetIndex]] = [orderNumbers[targetIndex], orderNumbers[i]]
         }
     }
     
