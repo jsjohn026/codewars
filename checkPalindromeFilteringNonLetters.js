@@ -5,22 +5,21 @@ Description:
 
 function isAlphabeticPalindrome(code) {
     // Write your code here
-   let chars = code.split('')
-   let lettersOnly = chars.filter(char => char.toUpperCase() !== char.toLowerCase())
+    code = code.toLowerCase();
     
-   let reversedChars = ''
-   for(let i = lettersOnly.length - 1; i >= 0; i--) {
-       reversedChars += lettersOnly[i]
-   }
-   
-   if (lettersOnly.join('').toLowerCase() === reversedChars.toLowerCase()   ) {
-      return 1      
-   }
+    for(let i = 0; i < code.length; i++) {
+        if (code[i].toLowerCase() !== code[i].toUpperCase()) {
+            if (code[i] !== code[(code.length - 1) - i]) {
+                return 0;
+            }
+        }
+    }
 
-   return 0
+    return 1;
 
 }
 
+// fails some test cases. 
 // let code = 'A1b2B!a'
 // console.log(isAlphabeticPalindrome(code))
 
@@ -28,31 +27,24 @@ function isAlphabeticPalindrome(code) {
 // refactor:
 
 function isAlphabeticPalindrome(code) {
-   let leftIndex = 0
-   let rightIndex = code.length - 1
+   code = code.toLowerCase()
+   let left = 0
+   let right = code.length - 1
 
-   while (leftIndex < rightIndex) {
+   while (left < right) {
       
-      while (leftIndex < rightIndex && code[leftIndex].toLowerCase() === code[leftIndex].toUpperCase() ) {
-         leftIndex++
-      }
+      while (left < right && code[left] === code[left].toUpperCase()) { left++ }
 
-      while (leftIndex < rightIndex && code[rightIndex].toLowerCase() === code[rightIndex].toUpperCase()) {
-         rightIndex--
-      }
+      while (left < right && code[right] === code[right].toUpperCase()) { right-- }
 
-      if (code[leftIndex].toLowerCase() !== code[rightIndex].toLowerCase()) {
-         return 0
-      }
+      if (code[left] !== code[right]) { return 0 }
 
-      leftIndex++
-      rightIndex--
+      left++
+      right--
    }
 
    return 1
-
 }
-
 
 
 // Tests:
