@@ -34,9 +34,7 @@ function isAlphabeticPalindrome(code) {
    while (left < right) {
       
       while (left < right && code[left] === code[left].toUpperCase()) { left++ }
-
       while (left < right && code[right] === code[right].toUpperCase()) { right-- }
-
       if (code[left] !== code[right]) { return 0 }
 
       left++

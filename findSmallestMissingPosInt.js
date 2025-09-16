@@ -4,7 +4,6 @@ Description:
 */
 
 function findSmallestMissingPositive(orderNumbers) {
-    // Write your code here
     let max = orderNumbers.length
     //swap numbers until they are in the correct spot
     for(let i = 0; i < max; i++) {
