@@ -78,6 +78,7 @@ function findFirstOccurrence(nums, target) {
 
 // refactor:
 
+//Solution A
 function findFirstOccurrence(nums, target) {
     let low = 0
     let high = nums.length - 1
@@ -96,6 +97,7 @@ function findFirstOccurrence(nums, target) {
 
     return result
 }
+
 
 /*
 Time Complexity	O(log n)
