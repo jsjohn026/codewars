@@ -50,10 +50,12 @@ function maxDistinctSubstringLengthInSessions(sessionString) {
       let left = 0                         // Open a sliding window with a left pointer
       
       for(let right = 0; right < session.length; right++) {  // Set the right side of the sliding window
-         while(seen.has(session[right])) {                   // If this char has already been seen delete it from the set
-            seen.delete(session[left])                       // move the left pointer forward  and repeat this check until the char is not found in the set
+         
+         while(seen.has(session[right])) {                   // While loop ONLY runs if the char is a duplicate; delete it from the set
+            seen.delete(session[left])                       // move the left pointer forward, and recheck until the char is not found in the set
             left++                                           // https://www.youtube.com/watch?v=wiGpQwVHdE0
          }
+
          seen.add(session[right])
          maxLength = Math.max(maxLength, right - left + 1)
       }

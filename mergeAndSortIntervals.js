@@ -77,7 +77,22 @@ function mergeHighDefinitionIntervals(intervals) {
 
 // refactor:
 
+function mergeHighDefinitionIntervals(intervals) {
+    if(intervals.length === 0) return []
+    
+    intervals.sort((a, b) => a[0] - b[0])
+    let merged = [intervals[0]]
+    
+    for(let interval of intervals) {
+        let lastMerged = merged[merged.length - 1]
+        
+        interval[0] <= lastMerged[1] 
+            ? lastMerged[1] = Math.max(lastMerged[1], interval[1]) 
+            : merged.push(interval)
+    }
+    return merged
 
+}
 
 
 // Tests:
