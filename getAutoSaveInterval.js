@@ -58,7 +58,22 @@ function getAutoSaveInterval(n) {
 }
 
 // refactor:
+function getAutoSaveInterval(n) { 
+   //  n = Number(n)
 
+   // convert all numbers to BigInt using n for HackerRank environment or it will not pass
+    if(n === 0) return 1n 
+    if(n === 1) return 2n
+    let prev = 1n
+    let curr = 2n 
+    
+    for(let i = 2; i <= n; i++) { 
+        let next = prev + curr
+        prev = curr 
+        curr = next 
+    } 
+    return curr 
+}
 
 
 
