@@ -74,12 +74,21 @@ Sample Output 1
  */
 
 function hasCircularDependency(n, dependencies) {
+  const indegree = new Array(n).fill(0)               // Make a new array with 0's to be a counter of how many modules depend on each one
+  const graph = Array.from({ length: n }, () => [])   // Make an array of empty arrays
+
+  for(const[u, v] of dependencies) {
+    graph[u].push(v)
+    indegree[v]++
+    console.log(graph)
+    console.log(indegree)
+  }
 
 }
 
 // refactor:
-
-
+let dependencies = [[1, 0], [2, 1], [0, 2]]
+console.log(hasCircularDependency(4, dependencies))
 
 
 // Tests:
