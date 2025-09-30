@@ -19,15 +19,9 @@ function hasDuplicate(nums) {
     let values = {}
 
     for (let i = 0; i < nums.length; i++) {
-        console.log('~~~~~~~~~~~~~')
-        console.log('start: ', values)
-        if(values[nums[i]]) return true;
-        
-        values[nums[i]] = 1;
-        console.log('end: ', values)
-        console.log('~~~~~~~~~~~~~')
+        if(values[nums[i]]) return true
+        values[nums[i]] = 1
     }
-
     return false;
 }
 
