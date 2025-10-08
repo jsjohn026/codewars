@@ -31,7 +31,7 @@ s is made up of only printable ASCII characters.
 
 function isAlphaNum(c) {
     return (
-        (c >= 'A' && c <= 'Z') ||
+        // (c >= 'A' && c <= 'Z') ||  // not needed if lowercasing s below
         (c >= 'a' && c <= 'z') ||
         (c >= '0' && c <= '9')
     )
