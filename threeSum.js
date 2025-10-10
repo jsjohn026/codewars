@@ -41,13 +41,18 @@ You should aim for a solution with O(n^2) time and O(1) space, where n is the si
 */
 
 function threeSum(nums){
-   const triplets = {};
+   const triplets = new Set();
    const numsObject = { ...nums };
 
-   for (let j = 0; j < nums.length; j++) {
-      
+   for (let j = 1; j < nums.length; j++) {
+      for (let k = j + 1; k < nums.length; k++) {
+         if (nums[j - 1] + nums[j] + nums[k] === 0) {
+            triplets.add([ j - 1, j, k ])
+         }
+      }
       
    }
+   return triplets.entries;
 
 }
 
