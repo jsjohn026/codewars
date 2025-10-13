@@ -58,7 +58,10 @@ function threeSum(nums){
 
 // refactor:
 
-
+function threeSum(nums) {
+   nums.sort((a, b) => a - b)
+   const result = []
+}
 
 
 // Tests:
